@@ -41,6 +41,7 @@ export default function Home(props) {
   const [previewVisiblePerson1, setPreviewVisiblePerson1] = useState(false)
   const [previewVisiblePerson2, setPreviewVisiblePerson2] = useState(false)
   const [previewVisiblePerson3, setPreviewVisiblePerson3] = useState(false)
+  const [logo, setLogo] = useState(false)
   const [fields, setFields] = useState([
   ]);
   const [organizationData, setOrganizationData] = useState(null)
@@ -81,11 +82,14 @@ export default function Home(props) {
     const organizationData = await apiInstance().put('/profile', data);
     if (organizationData.data.status == 200) {
       openNotificationRegisterSuccess();
-      // fetchOrganizationData();
-
-      setTimeout(function () { //Start the timer
-        router.push('/admin/setting/profile')
-      }.bind(this), 2000)
+      fetchOrganizationData();
+      setTimeout(
+        function () {
+          //Start the timer
+          router.push('/admin/setting/profile');
+        }.bind(this),
+        2000,
+      );
     } else {
       openNotificationRegisterFail(organizationData.data.message);
     }
@@ -113,8 +117,98 @@ export default function Home(props) {
   const [form] = Form.useForm();
 
   const onReset = () => {
-    resetImagePreview()
-    form.resetFields();
+    fetchDistrictsData(organizationData.sub_districts ? organizationData.sub_districts.provinces.province_id : 0)
+    fetchSubDistrictData(organizationData.sub_districts ? organizationData.sub_districts.districts.district_id : 0)
+    setFields([
+      {
+        name: ['organization_logo'],
+        value: organizationData.organization_logo,
+      },
+      {
+        name: ['organization_name'],
+        value: organizationData.organization_name,
+      },
+      {
+        name: ['organization_name_eng'],
+        value: organizationData.organization_name_eng,
+      },
+      {
+        name: ['organization_phone'],
+        value: organizationData.organization_phone,
+      },
+      {
+        name: ['organization_email'],
+        value: organizationData.organization_email,
+      },
+      {
+        name: ['organization_fax'],
+        value: organizationData.organization_fax
+      },
+      {
+        name: ['organization_address'],
+        value: organizationData.organization_address,
+      },
+      {
+        name: ['provincesSelected'],
+        value: organizationData.sub_districts ? organizationData.sub_districts.provinces.province_id : "0"
+      },
+      {
+        name: ['districtSelected'],
+        value: organizationData.sub_districts ? organizationData.sub_districts.districts.district_id : "0"
+      },
+      {
+        name: ['subDistrictSelected'],
+        value: organizationData.sub_districts ? organizationData.sub_districts.sub_district_id : "0"
+      },
+      {
+        name: ['social_fb_pageid'],
+        value: organizationData.social_fb_pageid
+      },
+      {
+        name: ['organization_email_alert'],
+        value: organizationData.organization_email_alert
+      },
+      {
+        name: ['rss'],
+        value: organizationData.rss
+      },
+      {
+        name: ['person01_name'],
+        value: organizationData.person01_name,
+      },
+      {
+        name: ['person01_position'],
+        value: organizationData.person01_position,
+      },
+      {
+        name: ['person01_phone'],
+        value: organizationData.person01_phone,
+      },
+      {
+        name: ['person02_name'],
+        value: organizationData.person02_name,
+      },
+      {
+        name: ['person02_position'],
+        value: organizationData.person02_position,
+      },
+      {
+        name: ['person02_phone'],
+        value: organizationData.person02_phone,
+      },
+      {
+        name: ['person03_name'],
+        value: organizationData.person03_name,
+      },
+      {
+        name: ['person03_position'],
+        value: organizationData.person03_position,
+      },
+      {
+        name: ['person03_phone'],
+        value: organizationData.person03_phone,
+      }
+    ]);
   };
 
   const fetchOrganizationData = async () => {
@@ -159,22 +253,30 @@ export default function Home(props) {
         _organizationData.data.organization.person03_image)
       setPreviewVisiblePerson3(true);
     }
+
+    // setPreviewImageLogo('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + _organizationData.data.organization.organization_logo);
+    // setPreviewVisibleLogo(true);
+    // setImageLandingPageLogo(_organizationData.data.organization.organization_logo);
     setFields([
+      // {
+      //   name: ['organization_logo'],
+      //   value: _organizationData.data.organization.organization_logo
+      // },
       {
         name: ['organization_name'],
-        value: _organizationData.data.organization.organization_name,
+        value: _organizationData.data.organization.organization_name ? _organizationData.data.organization.organization_name : ""
       },
       {
         name: ['organization_name_eng'],
-        value: _organizationData.data.organization.organization_name_eng,
+        value: _organizationData.data.organization.organization_name_eng ? _organizationData.data.organization.organization_name_eng : ""
       },
       {
         name: ['organization_phone'],
-        value: _organizationData.data.organization.organization_phone,
+        value: _organizationData.data.organization.organization_phone ? _organizationData.data.organization.organization_phone : ""
       },
       {
         name: ['organization_email'],
-        value: _organizationData.data.organization.organization_email,
+        value: _organizationData.data.organization.organization_email ? _organizationData.data.organization.organization_email : ""
       },
       {
         name: ['provincesSelected'],
@@ -190,11 +292,11 @@ export default function Home(props) {
       },
       {
         name: ['organization_fax'],
-        value: _organizationData.data.organization.organization_fax
+        value: _organizationData.data.organization.organization_fax ? _organizationData.data.organization.organization_fax : ""
       },
       {
         name: ['thumbnail_link'],
-        value: _organizationData.data.organization.thumbnail_link
+        value: _organizationData.data.organization.thumbnail_link ? _organizationData.data.organization.thumbnail_link : ""
       },
       {
         name: ['organization_address'],
@@ -207,10 +309,6 @@ export default function Home(props) {
       {
         name: ['social_fb_pageid'],
         value: _organizationData.data.organization.social_fb_pageid ? _organizationData.data.organization.social_fb_pageid : ""
-      },
-      {
-        name: ['rss'],
-        value: _organizationData.data.organization.rss ? _organizationData.data.organization.rss : ""
       },
       {
         name: ['rss'],

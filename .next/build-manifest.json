@@ -1,8 +1,8 @@
 {
   "devFiles": [
     "static/runtime/react-refresh.js",
-    "static/development/dll/dll_53503df420135fbe0812.js",
-    "static/development/dll/dll_53503df420135fbe0812.js.map"
+    "static/development/dll/dll_80e60aca6fae6675fc9c.js",
+    "static/development/dll/dll_80e60aca6fae6675fc9c.js.map"
   ],
   "lowPriorityFiles": [
     "static/development/_buildManifest.js",
@@ -20,11 +20,7 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/management/activities/[activitiesId]": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/admin/management/activities/add-activities": [
+    "/admin/setting/profile": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
