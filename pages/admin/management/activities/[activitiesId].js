@@ -141,6 +141,10 @@ export default function Home(props) {
         value: activitiesData.status_active,
       },
     ]);
+    // รีเซ็ตรูปภาพกลับไปยังภาพเดิมบนฐานข้อมูล
+    setPreviewImage('..\\..\\..\\uploads\\c-' + user.organization_id + '\\activities\\' + activitiesData.activities_image);
+    setPreviewVisible(true);
+    setImageLandingPage(activitiesData.activities_image);
   };
   const fetchActivitiesData = async () => {
     const _activitiesData = await apiInstance().get(

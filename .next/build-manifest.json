@@ -20,6 +20,10 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
+    "/admin/management/activities/[activitiesId]": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/admin/setting/profile": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"

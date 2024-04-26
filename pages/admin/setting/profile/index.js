@@ -209,6 +209,9 @@ export default function Home(props) {
         value: organizationData.person03_phone,
       }
     ]);
+    setPreviewImageLogo('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + organizationData.organization_logo);
+    setPreviewVisibleLogo(true);
+    setImageLandingPageLogo(organizationData.organization_logo);
   };
 
   const fetchOrganizationData = async () => {
