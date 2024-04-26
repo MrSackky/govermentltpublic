@@ -212,6 +212,18 @@ export default function Home(props) {
     setPreviewImageLogo('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + organizationData.organization_logo);
     setPreviewVisibleLogo(true);
     setImageLandingPageLogo(organizationData.organization_logo);
+
+    setPreviewImagePerson1('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + organizationData.person01_image);
+    setPreviewVisiblePerson1(true);
+    setImageLandingPagePerson1(organizationData.person01_image);
+
+    setPreviewImagePerson2('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + organizationData.person02_image);
+    setPreviewVisiblePerson2(true);
+    setImageLandingPagePerson2(organizationData.person02_image);
+
+    setPreviewImagePerson3('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + organizationData.person03_image);
+    setPreviewVisiblePerson3(true);
+    setImageLandingPagePerson3(organizationData.person03_image);
   };
 
   const fetchOrganizationData = async () => {
