@@ -84,6 +84,13 @@ export default function Home(props) {
     if (organizationData.data.status == 200) {
       openNotificationRegisterSuccess();
       fetchOrganizationData();
+      // setTimeout(
+      //   function () {
+      //     //Start the timer
+      //     router.push('/admin/setting/profile');
+      //   }.bind(this),
+      //   2000,);
+      window.location.reload();
     } else {
       openNotificationRegisterFail(organizationData.data.message);
     }
