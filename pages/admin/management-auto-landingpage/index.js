@@ -1,25 +1,21 @@
 import Link from 'next/link';
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 /* utils */
-import { absoluteUrl, checkIsLogin, apiInstance, convertDateDBtoDatePickerNoTime, convertDatetoThaiDate } from '../../../middleware/utils';
+import { absoluteUrl, apiInstance, convertDateDBtoDatePickerNoTime, convertDatetoThaiDate } from '../../../middleware/utils';
 
 /* components */
 import Layout from '../../../components/layout/LayoutAdmin';
 // import UserNav from '../components/navigation/User';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 import {
-  Carousel,
-  Row,
-  Col,
-  Typography,
-  Image,
   Button,
+  Col,
   Input,
-  Card,
-  notification,
+  Modal,
+  Row,
   Table,
-  Modal
+  notification
 } from 'antd';
 const { Search } = Input;
 
@@ -242,7 +238,7 @@ export default function Home(props) {
 
         <Table
           columns={columns}
-          rowKey={record => record.organization_id}
+          rowKey={record => record.intro_id}
           dataSource={data}
           pagination={pagination}
           loading={loading}

@@ -24,7 +24,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+<<<<<<< HEAD
     "/admin/management/activities/[activitiesId]": [
+=======
+    "/admin/management/activities/add-activities": [
+>>>>>>> e8a65ab49fd289726d9555de00ba394fa7615f58
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

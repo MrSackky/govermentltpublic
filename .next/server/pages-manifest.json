@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/admin/management/activities":"static/development/pages/admin/management/activities.js","/admin/management/activities/[activitiesId]":"static/development/pages/admin/management/activities/[activitiesId].js"}
+=======
+{"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/admin/management/activities":"static/development/pages/admin/management/activities.js","/admin/management/activities/add-activities":"static/development/pages/admin/management/activities/add-activities.js"}
+>>>>>>> e8a65ab49fd289726d9555de00ba394fa7615f58

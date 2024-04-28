@@ -1,7 +1,9 @@
 import { FilePdfTwoTone, InboxOutlined } from '@ant-design/icons';
 import {
-  Button, Form, notification, Row, Select,
-  Switch, Typography, Upload
+  Button, Form,
+  Row, Select,
+  Switch, Typography, Upload,
+  notification
 } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
 import axios from 'axios';
@@ -115,6 +117,17 @@ export default function Home(props) {
         value: documentsData.is_show,
       },
     ]);
+    // ล้างค่าใน state เพื่อไม่ให้แสดงข้อมูลเดิม
+    setPreviewVisible('..\\..\\..\\uploads\\c-' + user.organization_id + '\\documents\\' + documentsData.file_name_ori);
+    setPreviewImage(true);
+    setFile_name_ori(documentsData.file_name_ori);
+
+
+    // รีเซ็ตรูปภาพกลับไปยังภาพเดิมบนฐานข้อมูล
+    // setPreviewImage('..\\..\\..\\uploads\\c-' + user.organization_id + '\\activities\\' + activitiesData.activities_image);
+    // setPreviewVisible(true);
+    // setImageLandingPage(activitiesData.activities_image);
+
   };
   const fetchDocumentsData = async () => {
     const _documentsData = await apiInstance().get('documents/' + documentsId);

@@ -1,7 +1,9 @@
 import { FilePdfTwoTone, InboxOutlined } from '@ant-design/icons';
 import {
-  Button, Form, Image, notification, Row, Select,
-  Switch, Typography, Upload
+  Button, Form, Image,
+  Row, Select,
+  Switch, Typography, Upload,
+  notification
 } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
 import axios from 'axios';
@@ -108,7 +110,7 @@ export default function Home(props) {
   }, []);
 
   const onResetForm = () => {
-    setActive(journalData.is_use == 1 ? 1 : 0);
+    setActive(journalData.is_show == 1 ? 1 : 0);
     setFields([
       {
         name: ['journal_subject'],
@@ -135,6 +137,15 @@ export default function Home(props) {
         value: journalData.is_show,
       },
     ]);
+
+    setPreviewFile('..\\..\\..\\uploads\\c-' + user.organization_id + '\\journal\\' + journalData.journal_ori);
+    setPreviewVisibleFile(true);
+    setJournal_ori(journalData.journal_ori);
+
+
+    setPreviewImage('..\\..\\..\\uploads\\c-' + user.organization_id + '\\journal\\' + journalData.journal_img);
+    setPreviewVisibleImage(true);
+    setImageLandingPage(journalData.journal_img);
   };
   const fetchJournalData = async () => {
     const _journalData = await apiInstance().get('journal/' + journalId);
