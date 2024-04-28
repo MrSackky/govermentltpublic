@@ -90,7 +90,6 @@ export default function Home(props) {
       //     router.push('/admin/setting/profile');
       //   }.bind(this),
       //   2000,);
-      window.location.reload();
     } else {
       openNotificationRegisterFail(organizationData.data.message);
     }
@@ -101,7 +100,16 @@ export default function Home(props) {
       message: `บันทึกข้อมูลสำเร็จ`,
       description: 'บันทึกข้อมูลสำเร็จ',
       placement: 'topRight',
+
     });
+    setTimeout(
+      function () {
+        //Start the timer
+        // router.push('/admin/setting/profile');
+
+        window.location.reload();
+      }.bind(this),
+      2000,);
   };
 
   const openNotificationRegisterFail = messgae => {
