@@ -132,6 +132,10 @@ export default function Home(props) {
         value: informationData.status_active,
       },
     ]);
+    // รีเซ็ตรูปภาพกลับไปยังภาพเดิมบนฐานข้อมูล
+    setPreviewImage('..\\..\\..\\uploads\\c-' + user.organization_id + '\\information\\' + informationData.infor_image);
+    setPreviewVisible(true);
+    setImageLandingPage(informationData.infor_image);
   };
   const fetchInformationData = async () => {
     const _informationData = await apiInstance().get(

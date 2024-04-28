@@ -118,6 +118,10 @@ export default function Home(props) {
         value: bannerData.status_active,
       },
     ]);
+    // รีเซ็ตรูปภาพกลับไปยังภาพเดิมบนฐานข้อมูล
+    setPreviewImage('..\\..\\..\\uploads\\c-' + user.organization_id + '\\banner\\' + bannerData.banner_image);
+    setPreviewVisible(true);
+    setImageLandingPage(bannerData.banner_image);
   };
   const fetchBannerData = async () => {
     const _bannerData = await apiInstance('banner/' + bannerId).get(

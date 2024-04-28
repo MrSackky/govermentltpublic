@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Layout, Menu, Breadcrumb, Image } from 'antd';
 import { useState } from 'react';
 const _Header = ({ props }) => {
   const [active, setActive] = useState(false);
@@ -17,7 +16,7 @@ const _Header = ({ props }) => {
               <img
                 className="h-7 w-auto"
                 src={
-                   'assets/images/logo-government.png'
+                  'assets/images/logo-government.png'
                 }
               />
             </a>
@@ -44,16 +43,13 @@ const _Header = ({ props }) => {
           </svg>
         </button>
         <div
-          className={`${
-            active ? '' : 'hidden'
-          } bg-white w-full lg:inline-flex lg:flex-grow sm:w-6/6 lg:w-4/6 justify-center pl-3 pr-3 content-center`}
+          className={`${active ? '' : 'hidden'
+            } bg-white w-full lg:inline-flex lg:flex-grow sm:w-6/6 lg:w-4/6 justify-center pl-3 pr-3 content-center`}
         >
           <div className="text-center lg:inline-flex lg:flex-row lg:w-auto w-full lg:items-center justify-center items-start  flex flex-col lg:h-auto">
             <Link href="/#property">
-              <a
-                onClick={handleClick}
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-green-900 font-bold items-center justify-center   hover:text-green-900 "
-              >
+              <a onClick={handleClick}
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-green-900 font-bold items-center justify-center   hover:text-green-900">
                 คุณสมบัติ
               </a>
             </Link>
@@ -77,9 +73,8 @@ const _Header = ({ props }) => {
           <div className="lg:hidden h-1 border-t-2 border-gray-200"></div>
         </div>
         <div
-          className={`${
-            active ? '' : 'hidden'
-          }  text-center bg-white w-full lg:inline-flex lg:flex-grow lg:w-1/6 justify-end sm:h-12 md:h-12 px-2 items-center pb-18`}
+          className={`${active ? '' : 'hidden'
+            }  text-center bg-white w-full lg:inline-flex lg:flex-grow lg:w-1/6 justify-end sm:h-12 md:h-12 px-2 items-center pb-18`}
         >
           <div className="lg:inline-flex lg:flex-row lg:w-auto w-full lg:items-center justify-center items-start  flex flex-col lg:h-auto">
             <Link href="/login">
