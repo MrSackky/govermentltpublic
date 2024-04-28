@@ -432,7 +432,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var froala_editor_css_froala_style_min_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(froala_editor_css_froala_style_min_css__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! froala-editor/css/froala_editor.pkgd.min.css */ "./node_modules/froala-editor/css/froala_editor.pkgd.min.css");
 /* harmony import */ var froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(froala_editor_css_froala_editor_pkgd_min_css__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "D:\\govermentlt\\pages\\_app.js";
+var _jsxFileName = "C:\\Users\\Sackky\\Desktop\\govermentlt\\pages\\_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
