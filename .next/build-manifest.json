@@ -20,7 +20,7 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/dashborad": [
+    "/admin/setting/general": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
