@@ -84,29 +84,21 @@ export default function Home(props) {
     if (organizationData.data.status == 200) {
       openNotificationRegisterSuccess();
       fetchOrganizationData();
-      setTimeout(
-        function () {
-          //Start the timer
-          router.push('/admin/setting/profile');
-        }.bind(this),
-        2000,
-      );
     } else {
       openNotificationRegisterFail(organizationData.data.message);
     }
   }
 
-
   const openNotificationRegisterSuccess = () => {
-    api.success({
+    notification.success({
       message: `บันทึกข้อมูลสำเร็จ`,
-      description: 'บันทึกข้อมูลสำเร็จแล้ว',
+      description: 'บันทึกข้อมูลสำเร็จ',
       placement: 'topRight',
     });
   };
 
   const openNotificationRegisterFail = messgae => {
-    api.error({
+    notification.error({
       message: `พบปัญหาระหว่างการบันทึกข้อมูล`,
       description: messgae,
       placement: 'topRight',
@@ -237,38 +229,55 @@ export default function Home(props) {
     setOrganizationData(_organizationData.data.organization)
     fetchDistrictsData(_organizationData.data.organization.sub_districts ? _organizationData.data.organization.sub_districts.provinces.province_id : 0)
     fetchSubDistrictData(_organizationData.data.organization.sub_districts ? _organizationData.data.organization.sub_districts.districts.district_id : 0)
-    if (_organizationData.data.organization.organization_logo) {
-      setPreviewImageLogo(
-        '..\\..\\..\\uploads\\c-' +
-        user.organization_id +
-        '\\organization\\' +
-        _organizationData.data.organization.organization_logo,
-      )
-      setPreviewVisibleLogo(true)
-    }
-    if (_organizationData.data.organization.person01_image) {
-      setPreviewImagePerson1('..\\..\\..\\uploads\\c-' +
-        user.organization_id +
-        '\\organization\\' +
-        _organizationData.data.organization.person01_image)
-      setPreviewVisiblePerson1(true);
-    }
 
-    if (_organizationData.data.organization.person02_image) {
-      setPreviewImagePerson2('..\\..\\..\\uploads\\c-' +
-        user.organization_id +
-        '\\organization\\' +
-        _organizationData.data.organization.person02_image)
-      setPreviewVisiblePerson2(true);
-    }
+    setPreviewImageLogo('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + _organizationData.data.organization.organization_logo);
+    setPreviewVisibleLogo(true);
+    setImageLandingPageLogo(_organizationData.data.organization.organization_logo);
 
-    if (_organizationData.data.organization.person03_image) {
-      setPreviewImagePerson3('..\\..\\..\\uploads\\c-' +
-        user.organization_id +
-        '\\organization\\' +
-        _organizationData.data.organization.person03_image)
-      setPreviewVisiblePerson3(true);
-    }
+    setPreviewImagePerson1('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + _organizationData.data.organization.person01_image);
+    setPreviewVisiblePerson1(true);
+    setImageLandingPagePerson1(_organizationData.data.organization.person01_image);
+
+    setPreviewImagePerson2('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + _organizationData.data.organization.person02_image);
+    setPreviewVisiblePerson2(true);
+    setImageLandingPagePerson2(_organizationData.data.organization.person02_image);
+
+    setPreviewImagePerson3('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + _organizationData.data.organization.person03_image);
+    setPreviewVisiblePerson3(true);
+    setImageLandingPagePerson3(_organizationData.data.organization.person03_image);
+
+    // if (_organizationData.data.organization.organization_logo) {
+    //   setPreviewImageLogo(
+    //     '..\\..\\..\\uploads\\c-' +
+    //     user.organization_id +
+    //     '\\organization\\' +
+    //     _organizationData.data.organization.organization_logo,
+    //   )
+    //   setPreviewVisibleLogo(true)
+    // }
+    // if (_organizationData.data.organization.person01_image) {
+    //   setPreviewImagePerson1('..\\..\\..\\uploads\\c-' +
+    //     user.organization_id +
+    //     '\\organization\\' +
+    //     _organizationData.data.organization.person01_image)
+    //   setPreviewVisiblePerson1(true);
+    // }
+
+    // if (_organizationData.data.organization.person02_image) {
+    //   setPreviewImagePerson2('..\\..\\..\\uploads\\c-' +
+    //     user.organization_id +
+    //     '\\organization\\' +
+    //     _organizationData.data.organization.person02_image)
+    //   setPreviewVisiblePerson2(true);
+    // }
+
+    // if (_organizationData.data.organization.person03_image) {
+    //   setPreviewImagePerson3('..\\..\\..\\uploads\\c-' +
+    //     user.organization_id +
+    //     '\\organization\\' +
+    //     _organizationData.data.organization.person03_image)
+    //   setPreviewVisiblePerson3(true);
+    // }
 
     // setPreviewImageLogo('..\\..\\..\\uploads\\c-' + user.organization_id + '\\organization\\' + _organizationData.data.organization.organization_logo);
     // setPreviewVisibleLogo(true);
