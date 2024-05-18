@@ -138,11 +138,11 @@ export default function modal({ fetch, user }) {
                 onClick={() => setVisible(true)}
                 className="ml-4 lg:inline-flex lg:w-auto w-full px-2 py-2 rounded h-8 text-white bg-green-600 font-bold items-center justify-center hover:bg-green-600 hover:text-white"
             >
-                เพิ่มเมนู
+                เพิ่มเมนูหลัก
             </a>
             {contextHolder}
             <Modal
-                title="เพิ่มเมนู"
+                title="เพิ่มเมนูหลัก"
                 className="mt-4"
                 centered
                 visible={visible}
@@ -166,20 +166,20 @@ export default function modal({ fetch, user }) {
                 >
                     <Form.Item
                         name="menu_title"
-                        label="ชื่อเมนู"
+                        label="ชื่อเมนูหลัก"
                         style={{float:"left"}}
                         className="block text-gray-700 text-sm font-bold mb-2 w-2/3"
                         rules={[
                             {
                                 required: true,
-                                message: 'กรุณากรอกชื่อเมนู',
+                                message: 'กรุณากรอกชื่อเมนูหลัก',
                             },
                         ]}
                     >
                         <Input
                             id="#"
                             type="text"
-                            placeholder="ชื่อเมนู"
+                            placeholder="ชื่อเมนูหลัก"
                             className="resize-none border rounded-md"
                         />
                     </Form.Item>
@@ -225,7 +225,7 @@ export default function modal({ fetch, user }) {
 
                     <Form.Item
                         name="pattern_menu"
-                        label="รูปแบบเมนู"
+                        label="รูปแบบเมนูหลัก"
                         className="block text-gray-700 text-sm font-bold mb-2 w-full"
                     >
                         <Select

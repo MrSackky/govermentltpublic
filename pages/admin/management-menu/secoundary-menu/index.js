@@ -1,37 +1,30 @@
-import Link from 'next/link';
+import { DragOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import ReactDragListView from "react-drag-listview";
-import { DragOutlined, CheckCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 /* utils */
-import { absoluteUrl, checkIsLogin, apiInstance } from '../../../../middleware/utils';
+import { absoluteUrl, apiInstance } from '../../../../middleware/utils';
 
 /* components */
 import Layout from '../../../../components/layout/LayoutAdmin';
 import ModalAddMenu from '../../../../components/managemnet/secondary-menu/add-menu';
+import ModalAddMenuSub from '../../../../components/managemnet/secondary-menu/add-menu-sub';
 import ModalEditMenu from '../../../../components/managemnet/secondary-menu/edit-menu';
-import ModalAddMenuSub from '../../../../components/managemnet/primary-menu/add-menu-sub';
-import ModalEditMenuSub from '../../../../components/managemnet/primary-menu/edit-menu-sub';
+import ModalEditMenuSub from '../../../../components/managemnet/secondary-menu/edit-menu-sub';
 
 
 // import UserNav from '../components/navigation/User';
 
 import {
-  Carousel,
-  Row,
-  Col,
-  Typography,
-  Image,
   Button,
+  Empty,
   Input,
-  Card,
   List,
-  notification,
-  Spin,
   Modal,
+  Spin,
   Tag,
-  Empty
+  Typography,
+  notification
 } from 'antd';
-import { compareSync } from 'bcryptjs';
 
 const { Text, Title } = Typography;
 

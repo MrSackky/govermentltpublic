@@ -202,7 +202,7 @@ export default function modal({ _visible, hideEditModal, fetch, user, dataEdit }
 
 
             <Modal
-                title={"แก้ไขเมนู " + (!dataEdit ? "" : dataEdit.menu_title)}
+                title={"แก้ไขเมนูหลัก " + (!dataEdit ? "" : dataEdit.menu_title)}
                 className="mt-4"
                 centered
                 visible={_visible}
@@ -227,20 +227,20 @@ export default function modal({ _visible, hideEditModal, fetch, user, dataEdit }
                 >
                     <Form.Item
                         name="menu_title"
-                        label="ชื่อเมนู"
+                        label="ชื่อเมนูหลัก"
                         className="block text-gray-700 text-sm font-bold mb-2 w-2/3"
                         style={{ float: "left" }}
                         rules={[
                             {
                                 required: true,
-                                message: 'กรุณากรอกชื่อเมนู',
+                                message: 'กรุณากรอกชื่อเมนูหลัก',
                             },
                         ]}
                     >
                         <Input
                             id="#"
                             type="text"
-                            placeholder="ชื่อเมนู"
+                            placeholder="ชื่อเมนูหลัก"
                             className="resize-none border rounded-md"
                         />
                     </Form.Item>
@@ -285,7 +285,7 @@ export default function modal({ _visible, hideEditModal, fetch, user, dataEdit }
                     </Form.Item>
                     <Form.Item
                         name="pattern_menu"
-                        label="รูปแบบเมนู"
+                        label="รูปแบบเมนูหลัก"
                         className="block text-gray-700 text-sm font-bold mb-2 w-full"
                     >
                         <Select

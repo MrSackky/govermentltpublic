@@ -20,7 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/dashborad": [
+    "/admin/management-menu/primary-menu": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/admin/management-menu/secoundary-menu": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

@@ -76,7 +76,7 @@ export default function modal({ _visible, hideModal, fetch, user, dataEdit }) {
 
 
         console.log("ON OK")
-      
+
         hideModal()
         onReset()
         fetch()
@@ -136,7 +136,7 @@ export default function modal({ _visible, hideModal, fetch, user, dataEdit }) {
 
             {contextHolder}
             <Modal
-                title={"เพิ่มเมนูย่อยของเมนู " + (!dataEdit ? "" : dataEdit.menu_title)}
+                title={"เพิ่มเมนูย่อยของเมนูหลัก " + (!dataEdit ? "" : dataEdit.menu_title)}
                 className="mt-4"
                 centered
                 visible={_visible}
@@ -160,20 +160,20 @@ export default function modal({ _visible, hideModal, fetch, user, dataEdit }) {
                 >
                     <Form.Item
                         name="menu_title"
-                        label="ชื่อเมนู"
+                        label="ชื่อเมนูย่อย"
                         style={{ float: "left" }}
                         className="block text-gray-700 text-sm font-bold mb-2 w-2/3"
                         rules={[
                             {
                                 required: true,
-                                message: 'กรุณากรอกชื่อเมนู',
+                                message: 'กรุณากรอกชื่อเมนูย่อย',
                             },
                         ]}
                     >
                         <Input
                             id="#"
                             type="text"
-                            placeholder="ชื่อเมนู"
+                            placeholder="ชื่อเมนูย่อย"
                             className="resize-none border rounded-md"
                         />
                     </Form.Item>
@@ -219,7 +219,7 @@ export default function modal({ _visible, hideModal, fetch, user, dataEdit }) {
 
                     <Form.Item
                         name="pattern_menu"
-                        label="รูปแบบเมนู"
+                        label="รูปแบบเมนูย่อย"
                         className="block text-gray-700 text-sm font-bold mb-2 w-full"
                     >
                         <Select
