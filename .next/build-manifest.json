@@ -20,15 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/management-menu/primary-menu": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/admin/management-menu/secoundary-menu": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/admin/management-organization/add-organization": [
+    "/admin/setting/cover": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
