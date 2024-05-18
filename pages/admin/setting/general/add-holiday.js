@@ -170,17 +170,19 @@ export default function Home(props) {
 	}
 
 	return (
-		<Layout title="Government - Admin management" titlePage={"เพิ่มวันหยุด"} indexMenu={"4"} url={origin} origin={origin} props={props} _routes={[
-			{
-				path: '/admin/dashborad',
-				breadcrumbName: 'หน้าหลัก',
-			}, {
-				path: '/admin/setting/general/management-holiday',
-				breadcrumbName: 'จัดการหน้าวันหยุดพิเศษ',
-			}, {
-				path: '/admin/setting/general/add-holiday',
-				breadcrumbName: 'เพิ่มวันหยุด',
-			}]}>
+		<Layout title="Government - Admin management" titlePage={"เพิ่มวันหยุด"}
+			indexSubMenu={"6"}
+			indexMenu={"sub-6-3"} url={origin} origin={origin} props={props} _routes={[
+				{
+					path: '/admin/dashborad',
+					breadcrumbName: 'หน้าหลัก',
+				}, {
+					path: '/admin/setting/general/management-holiday',
+					breadcrumbName: 'จัดการหน้าวันหยุดพิเศษ',
+				}, {
+					path: '/admin/setting/general/add-holiday',
+					breadcrumbName: 'เพิ่มวันหยุด',
+				}]}>
 			<div>
 				{contextHolder}
 				<Row >

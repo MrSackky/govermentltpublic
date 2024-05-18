@@ -20,11 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/setting/general": [
+    "/admin/management-auto-landingpage/landing-page/[introId]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/admin/setting/profile": [
+    "/login": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

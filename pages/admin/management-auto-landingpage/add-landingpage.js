@@ -1,27 +1,25 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 /* utils */
-import { absoluteUrl, checkIsLogin, apiInstance, convertDatetoAddDB } from '../../../middleware/utils';
 import axios from 'axios';
+import { absoluteUrl, apiInstance } from '../../../middleware/utils';
 /* components */
-import Layout from '../../../components/layout/LayoutAdmin';
 import moment from 'moment';
+import Layout from '../../../components/layout/LayoutAdmin';
 // import UserNav from '../components/navigation/User';
-import { useEffect, useState } from 'react'
-import validator from 'validator'
-import {
-  Row,
-  Typography,
-  Button,
-  notification,
-  Form,
-  DatePicker,
-  Upload,
-  Image,
-  Switch
-} from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
-import { set } from 'js-cookie';
+import {
+  Button,
+  DatePicker,
+  Form,
+  Image,
+  Row,
+  Switch,
+  Typography,
+  Upload,
+  notification
+} from 'antd';
+import { useEffect, useState } from 'react';
+import validator from 'validator';
 const { Text, Title } = Typography;
 const { Dragger } = Upload;
 
@@ -124,7 +122,7 @@ export default function Home(props) {
       }
       axios.post(options.action, data, config).then((res) => {
         // imageLandingPage
-        // console.log(res.data.data.list[0]._name) 
+        // console.log(res.data.data.list[0]._name)
         setImageLandingPage(res.data.data.list[0]._name)
         options.onSuccess(res.data, options.file)
       }).catch((err) => {
@@ -182,7 +180,7 @@ export default function Home(props) {
   }
 
   return (
-    <Layout title="Government - Admin management" titlePage={"เพิ่ม landing page"} indexMenu={"4"} url={origin} origin={origin} props={props} _routes={[
+    <Layout title="Government - Admin management" titlePage={"เพิ่ม landing page"} indexMenu={"3"} url={origin} origin={origin} props={props} _routes={[
       {
         path: '/admin/dashborad',
         breadcrumbName: 'หน้าหลัก',
@@ -326,7 +324,7 @@ export default function Home(props) {
 
             >
               <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" size="large" placeholder="Email"
-              // onChange={() => setEmailText(event.target.value)} 
+              // onChange={() => setEmailText(event.target.value)}
               />
             </Form.Item>
 

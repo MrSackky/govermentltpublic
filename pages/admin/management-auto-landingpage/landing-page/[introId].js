@@ -220,7 +220,7 @@ export default function Home(props) {
   }
 
   return (
-    <Layout title="Government - Admin management" titlePage={introData ? "แก้ไข landing page " + introData.intro_title : "แก้ไข landing page"} indexMenu={"4"} url={origin} origin={origin} props={props} _routes={[
+    <Layout title="Government - Admin management" titlePage={introData ? "แก้ไข landing page " + introData.intro_title : "แก้ไข landing page"} indexMenu={"3"} url={origin} origin={origin} props={props} _routes={[
       {
         path: '/admin/dashborad',
         breadcrumbName: 'หน้าหลัก',
