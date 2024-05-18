@@ -1,26 +1,19 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 /* utils */
-import { absoluteUrl, checkIsLogin, apiInstance } from '../../../middleware/utils';
+import { absoluteUrl, apiInstance } from '../../../middleware/utils';
 
 /* components */
 import Layout from '../../../components/layout/LayoutAdmin';
 // import UserNav from '../components/navigation/User';
-import { useEffect, useState } from 'react'
-import validator from 'validator'
 import {
-  Carousel,
-  Row,
-  Col,
-  Typography,
-  Image,
   Button,
-  Input,
-  Card,
-  Table,
-  notification,
-  Form
+  Form,
+  Row,
+  Typography,
+  notification
 } from 'antd';
+import { useEffect, useState } from 'react';
+import validator from 'validator';
 const { Text, Title } = Typography;
 
 
@@ -83,7 +76,7 @@ export default function Home(props) {
   }
 
   return (
-    <Layout title="Government - Admin management" titlePage={"เพิ่มหน่วยงาน"} indexMenu={"2"} url={origin} origin={origin} props={props} _routes={[
+    <Layout title="Government - Admin management" titlePage={"เพิ่มหน่วยงาน"} indexMenu={"1"} url={origin} origin={origin} props={props} _routes={[
       {
         path: '/admin/dashborad',
         breadcrumbName: 'หน้าหลัก',
@@ -238,7 +231,7 @@ export default function Home(props) {
               ]}
             >
               <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" size="large" placeholder="Email"
-              // onChange={() => setEmailText(event.target.value)} 
+              // onChange={() => setEmailText(event.target.value)}
               />
             </Form.Item>
             <Form.Item
@@ -286,10 +279,10 @@ export default function Home(props) {
             </Form.Item>
             <div style={{ clear: "both" }}></div>
 
-          
+
             <Form.Item className="flex mt-6">
               <div className="lg:inline-flex w-full">
-               
+
                 <div className="text-center lg:text-right w-full lg:w-full">
                   <Button
                     htmlType="button"

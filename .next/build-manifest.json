@@ -20,11 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/management-auto-landingpage/landing-page/[introId]": [
+    "/admin/dashborad": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/login": [
+    "/admin/management-organization/add-organization": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
