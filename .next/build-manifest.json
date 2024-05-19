@@ -20,11 +20,19 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/management-menu/secoundary-menu": [
+    "/admin/dashborad": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/admin/setting/cover": [
+    "/admin/management-auto-landingpage": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/admin/management-information": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/admin/management-organization": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

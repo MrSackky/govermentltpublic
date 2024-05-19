@@ -1,24 +1,17 @@
-import Link from 'next/link';
 
 /* utils */
 import { absoluteUrl, checkIsLogin } from '../../../middleware/utils';
 
 /* components */
 import Layout from '../../../components/layout/LayoutAdmin';
-import IndexSuperAdmin from './index-super-admin';
 import IndexAdmin from './index-admin';
+import IndexSuperAdmin from './index-super-admin';
 // import UserNav from '../components/navigation/User';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 import {
-  Carousel,
-  Row,
-  Col,
-  Typography,
-  Image,
-  Button,
   Input,
-  Card,
+  Typography
 } from 'antd';
 
 const { Text, Title } = Typography;
@@ -50,7 +43,7 @@ export default function Home(props) {
   }
 
   return (
-    <Layout title="Government - Admin management" titlePage="Dashborad" isMain={1} url={origin} origin={origin} user={login} props={props} indexMenu={"0"}
+    <Layout title="Government - Admin management" titlePage="หน้าหลัก" isMain={1} url={origin} origin={origin} user={login} props={props} indexMenu={"0"}
       _routes={[
         {
           path: '/admin/dashborad',

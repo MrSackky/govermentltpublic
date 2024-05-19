@@ -192,14 +192,14 @@ export default function Home(props) {
   };
 
   return (
-    <Layout titlePage={"จัดการหน้า landing page"} isMain={true} indexMenu={"3"} title="Government - Admin management" url={origin} origin={origin} user={login} props={props}
+    <Layout titlePage={"จัดการหยุดพิเศษ"} isMain={true} indexMenu={"3"} title="Government - Admin management" url={origin} origin={origin} user={login} props={props}
       _routes={[
         {
           path: '/admin/dashborad',
           breadcrumbName: 'หน้าหลัก',
         }, {
           path: '/admin/management-auto-landingpage',
-          breadcrumbName: 'จัดการหน้า landing page',
+          breadcrumbName: 'จัดการหน้าวันหยุดพิเศษ',
         }]}
     >
       <div>
@@ -214,7 +214,7 @@ export default function Home(props) {
                       //onClick={(e) => handleLogout(e)}
                       className="lg:inline-flex lg:w-auto w-full px-2 py-2 rounded h-8 text-white bg-green-600 font-bold items-center justify-center hover:bg-green-600 hover:text-white"
                     >
-                      เพิ่ม landing page
+                      เพิ่มวันหยุดพิเศษ
                     </a>
                   </Link>
                 </Row>

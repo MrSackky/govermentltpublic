@@ -270,7 +270,7 @@ export default function Home(props) {
     });
   };
   return (
-    <Layout key={"home-organization"} titlePage={"หน่วยงาน"} title="Government - Admin management" url={origin} origin={origin} isMain={true} indexMenu={"1"} user={login} props={props} _routes={[
+    <Layout key={"home-organization"} titlePage={"จัดการหน่วยงาน"} title="Government - Admin management" url={origin} origin={origin} isMain={true} indexMenu={"1"} user={login} props={props} _routes={[
       {
         path: '/admin/dashborad',
         breadcrumbName: 'หน้าหลัก',

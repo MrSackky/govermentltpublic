@@ -1,35 +1,24 @@
-import Link from 'next/link';
 
 import dynamic from 'next/dynamic';
-import ReactDOM, { flushSync } from 'react-dom';
 
 
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 
 /* utils */
-import { absoluteUrl, checkIsLogin, apiInstance } from '../../../middleware/utils';
+import { absoluteUrl, apiInstance } from '../../../middleware/utils';
 
 /* components */
 import Layout from '../../../components/layout/LayoutAdmin';
 // import UserNav from '../components/navigation/User';
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 
 import {
-  Carousel,
-  Row,
-  Col,
-  Typography,
-  Image,
   Button,
-  Input,
-  Card,
-  Switch,
   Form,
+  Typography,
   notification
 } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
-import { set } from 'js-cookie';
 const { Text, Title } = Typography;
 
 
@@ -67,7 +56,7 @@ export default function Home(props) {
       'infor_detail': content
     }
     // console.log(data)
-    const registerData = await apiInstance().put('/information-news/1' , data);
+    const registerData = await apiInstance().put('/information-news/1', data);
     if (registerData.data.status == 200) {
       openNotificationSuccess()
       fetchOrganizationData();
@@ -101,14 +90,14 @@ export default function Home(props) {
 
   };
   return (
-    <Layout titlePage={"ข่าวประชาสัมพันธ์"} isMain={true} indexMenu={"2"} title="Government - Admin management" url={origin} origin={origin} user={login} props={props}
+    <Layout titlePage={"จัดการข่าวประชาสัมพันธ์"} isMain={true} indexMenu={"2"} title="Government - Admin management" url={origin} origin={origin} user={login} props={props}
       _routes={[
         {
           path: '/admin/dashborad',
           breadcrumbName: 'หน้าหลัก',
         }, {
           path: '/admin/management-information',
-          breadcrumbName: 'ข่าวประชาสัมพันธ์',
+          breadcrumbName: 'จัดการข่าวประชาสัมพันธ์',
         }]
       }
     >
@@ -121,7 +110,7 @@ export default function Home(props) {
         onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
         onChange={newContent => { }}
       />
-      <br/>
+      <br />
       <Form
         name="basic"
         layout="vertical"
