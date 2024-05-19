@@ -180,16 +180,16 @@ export default function Home(props) {
   }
 
   return (
-    <Layout title="Government - Admin management" titlePage={"เพิ่ม landing page"} indexMenu={"3"} url={origin} origin={origin} props={props} _routes={[
+    <Layout title="Government - Admin management" titlePage={"เพิ่มวันหยุดพิเศษ"} indexMenu={"3"} url={origin} origin={origin} props={props} _routes={[
       {
         path: '/admin/dashborad',
         breadcrumbName: 'หน้าหลัก',
       }, {
         path: '/admin/management-organization',
-        breadcrumbName: 'จัดการหน้า landing page',
+        breadcrumbName: 'จัดการหน้าวันหยุดพิเศษ',
       }, {
         path: '/admin/management-organization/add-organization',
-        breadcrumbName: 'เพิ่ม landing page',
+        breadcrumbName: 'เพิ่มวันหยุดพิเศษ',
       }]}>
       <div>
         {contextHolder}
@@ -208,13 +208,13 @@ export default function Home(props) {
 
             <Form.Item
               name="intro_title"
-              label="ชื่อหน้า landing page"
+              label="ชื่อหน้าวันหยุดพิเศษ"
               className="block text-gray-700 text-sm font-bold mb-2 w-1/3 form-organization"
               style={{ textAlign: "left !important" }}
               rules={[
                 {
                   required: true,
-                  message: 'กรุณากรอก ชื่อหน้า landing page!'
+                  message: 'กรุณากรอก ชื่อหน้าวันหยุดพิเศษ'
                 },
               ]}
             >
@@ -222,7 +222,7 @@ export default function Home(props) {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="#"
                 type="text"
-                placeholder="ชื่อหน้า landing page"
+                placeholder="ชื่อหน้าวันหยุดพิเศษ"
               />
             </Form.Item>
             <Form.Item
@@ -266,12 +266,12 @@ export default function Home(props) {
 
             <Form.Item
               name="activities_image"
-              label="ภาพ landing page"
+              label="ภาพวันหยุดพิเศษ"
               className="block text-gray-700 text-sm font-bold mb-2 w-full"
               rules={[
                 {
                   required: true,
-                  message: 'กรุณาเลือก ภาพ landing page',
+                  message: 'กรุณาเลือก ภาพวันหยุดพิเศษ',
                 },
               ]}
             >

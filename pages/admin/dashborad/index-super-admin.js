@@ -1,28 +1,25 @@
-import Link from 'next/link';
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 /* utils */
-import { absoluteUrl, checkIsLogin, apiInstance, convertDatetoThaiDate, convertDateDBtoDatePickerNoTime, addDays, formatDateWithoutTime, bytesToMB, bytesToSize } from '../../../middleware/utils';
+import { absoluteUrl, addDays, apiInstance, bytesToMB, bytesToSize, convertDateDBtoDatePickerNoTime, convertDatetoThaiDate, formatDateWithoutTime } from '../../../middleware/utils';
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
+import { LikeOutlined } from '@ant-design/icons';
 import {
-  Carousel,
-  Row,
-  Col,
-  Typography,
-  Image,
   Button,
+  Col,
   Input,
-  Card,
+  Modal,
+  Row,
   Statistic,
   Table,
-
+  Typography,
+  notification
 } from 'antd';
+import moment from 'moment';
 
 const { Search } = Input;
-import { LikeOutlined } from '@ant-design/icons';
 const { Text, Title } = Typography;
-import moment from 'moment';
 
 
 export default function Home(props) {
@@ -44,6 +41,9 @@ export default function Home(props) {
   const [expried, setExpried] = useState(null)
   const [apiTxtWillExpried, setApiTxtWillExpried] = useState('dashborad-will-expried')
   const [txtMenu, setTextMenu] = useState('ผู้ใช้ทั้งหมด')
+  const [dataDelete, setDataDelete] = useState(null)
+  const [visibleModalDelete, setVisibleModalDelete] = useState(false)
+  const [api, contextHolder] = notification.useNotification();
 
   useEffect(() => {
     var _filters = []
@@ -52,6 +52,52 @@ export default function Home(props) {
     fetchWillExprired({ pagination })
     fetchExprired({ pagination })
   }, [])
+
+  const showModal = (data) => {
+    console.log('data deletd')
+    console.log(data)
+    setDataDelete(data)
+    setVisibleModalDelete(true)
+  };
+
+  const hideModal = () => {
+    setVisibleModalDelete(false)
+  };
+
+  const onDelete = async () => {
+    // console.log('DELETE')
+    // const data = {
+    //   'organization_name': value.organization_name,
+    // }
+    // console.log(data)
+    const registerData = await apiInstance().delete('organization/' + dataDelete.organization_id, {});
+    if (registerData.data.status == 200) {
+      openNotificationSuccess()
+      // fetchOrganizationData();
+      setVisibleModalDelete(false)
+      fetch({ pagination });
+    } else {
+      openNotificationFail(registerData.data.message)
+
+    }
+  }
+
+
+  const openNotificationSuccess = () => {
+    notification.success({
+      message: `ลบข้อมูลสำเร็จ`,
+      description: 'ลบข้อมูลสำเร็จ',
+      placement: 'topRight',
+    });
+  };
+
+  const openNotificationFail = (messgae) => {
+    notification.error({
+      message: `พบปัญหาระหว่างการลบข้อมูล`,
+      description: messgae,
+      placement: 'topRight',
+    });
+  };
 
   const columns = [
     {
@@ -429,7 +475,7 @@ export default function Home(props) {
     switch (value) {
 
       case "willExpried":
-        setTextMenu("ผู้ใช้ที่กำลังจะหมดอายุ")
+        setTextMenu("จำนวนผู้ใช้งานที่กำลังจะหมดอายุ")
         setApiTxt("dashborad-will-expried")
 
         fetchWillExpriredData({
@@ -440,7 +486,7 @@ export default function Home(props) {
         })
         break;
       case "expried":
-        setTextMenu("ผู้ใช้ที่หมดอายุ")
+        setTextMenu("จำนวนผู้ใช้งานที่หมดอายุ")
         setApiTxt("dashborad-expried")
         fetchExpriredData({
           pagination: {
@@ -451,7 +497,7 @@ export default function Home(props) {
         break;
 
       default:
-        setTextMenu("ผู้ใช้ทั้งหมด")
+        setTextMenu("จำนวนผู้ใช้งานทั้งหมด")
         setApiTxt("dashborad-all")
         fetchData({
           pagination: {
@@ -475,21 +521,21 @@ export default function Home(props) {
       <Row>
 
         <Col span={4} className="lg:col-3 md:col-12 p-4 rounded-lg text-white bg-green-600 mr-4 mt-2">
-          <a onClick={() => { handleStatisticClick('all') }}> <Statistic title="จำนวนผู้ใช้ทั้งหมด" value={totalUser} prefix={<LikeOutlined />} valueStyle={{
+          <a onClick={() => { handleStatisticClick('all') }}> <Statistic title="จำนวนผู้ใช้งานทั้งหมด" value={totalUser} prefix={<LikeOutlined />} valueStyle={{
             color: "white",
             fontSize: "2rem"
           }} /></a>
         </Col>
 
         <Col span={4} className="lg:col-3 md:col-12 p-4 rounded-lg text-white bg-yellow-600 mr-4 mt-2">
-          <a onClick={() => { handleStatisticClick('willExpried') }}><Statistic title="กำลังจะหมดอายุ" value={totalWillExpired} prefix={<LikeOutlined />} valueStyle={{
+          <a onClick={() => { handleStatisticClick('willExpried') }}><Statistic title="จำนวนผู้ใช้งานที่กำลังจะหมดอายุ" value={totalWillExpired} prefix={<LikeOutlined />} valueStyle={{
             color: "white",
             fontSize: "2rem"
           }} /></a>
         </Col>
 
         <Col span={4} className="lg:col-3 md:col-12 p-4 rounded-lg text-white bg-red-600 mr-4 mt-2">
-          <a onClick={() => { handleStatisticClick('expried') }}> <Statistic title="หมดอายุ" value={totalExpired} prefix={<LikeOutlined />} valueStyle={{
+          <a onClick={() => { handleStatisticClick('expried') }}> <Statistic title="จำนวนผู้ใช้งานที่หมดอายุ" value={totalExpired} prefix={<LikeOutlined />} valueStyle={{
             color: "white",
             fontSize: "2rem"
           }} /></a>
@@ -498,18 +544,24 @@ export default function Home(props) {
 
       <Row className="w-full mt-4">
 
-        <Row className="w-full">
-          <Col className="lg:col-3 md:col-12">
-            <Title level={2} className="mr-2">{txtMenu}</Title>
-          </Col>
-          <Col className="lg:col-9 md:col-12">
-            <Search placeholder="input search text"
-              value={search}
-              onChange={(value) => onChangeSearch(value)}
-              onSearch={onSearch}
-              enterButton
-              allowClear
-            />
+        <Row >
+          <Col className=" pb-1">
+            <Row>
+              <Col>
+                <Row className="items-center">
+                  <Title level={2} className="mr-2">{txtMenu}</Title>
+                </Row>
+              </Col>
+              <Col className="flex justify-end justify-items-end">
+                <Search placeholder="กรอกชื่อผู้ใช้งาน"
+                  value={search}
+                  onChange={(value) => onChangeSearch(value)}
+                  onSearch={onSearch}
+                  enterButton
+                  allowClear
+                />
+              </Col>
+            </Row>
           </Col>
         </Row>
         <Row className="w-full">
@@ -526,6 +578,21 @@ export default function Home(props) {
           </Col>
         </Row>
 
+        <Modal
+          title="คุณต้องการลบข้อมูลหรือไม่?"
+          visible={visibleModalDelete}
+          onOk={onDelete}
+          onCancel={hideModal}
+          okText="ลบ"
+          cancelText="ยกเลิก"
+          okButtonProps={{
+            'type': "primary",
+            'danger': true
+          }}
+        >
+          <p>คุณต้องการลบ "{dataDelete ? dataDelete.organization_name : ""}" หรือไม่?  </p>
+
+        </Modal>
 
 
       </Row>

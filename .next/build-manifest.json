@@ -24,15 +24,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/admin/management-auto-landingpage": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/admin/management-information": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/admin/management-organization": [
+    "/admin/management-auto-landingpage/add-landingpage": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
