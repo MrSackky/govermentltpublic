@@ -19,14 +19,6 @@
     ],
     "/_polyfills": [
       "static/runtime/polyfills.js"
-    ],
-    "/admin/dashborad": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/admin/management-auto-landingpage/add-landingpage": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
