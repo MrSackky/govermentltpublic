@@ -126,13 +126,13 @@ export default function Home(props) {
         {contextHolder}
         <div className="text-base">
           <ul>
-            <p>เรื่องร้องทุกข์ : {data ? data.contact_post : ''}</p>
+            <p>เรื่องติดต่อ : {data ? data.contact_post : ''}</p>
           </ul>
           <ul>
             <p>รายละเอียด : {data ? data.contact_detail : ''}</p>
           </ul>
           <ul>
-            <p>ผู้ร้องทุกข์ : {data ? data.contact_name_posted : ''}</p>
+            <p>ผู้ติดต่อ : {data ? data.contact_name_posted : ''}</p>
           </ul>
           <ul>
             <p>เบอร์โทร : {data ? data.contact_telephone : ''}</p>

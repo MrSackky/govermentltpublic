@@ -19,6 +19,14 @@
     ],
     "/_polyfills": [
       "static/runtime/polyfills.js"
+    ],
+    "/admin/dashborad": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/admin/management-contact/[contactId]": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
