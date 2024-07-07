@@ -60,6 +60,9 @@ export default function Home(props) {
     if (registerData.data.status == 200) {
       openNotificationSuccess()
       fetch();
+      setTimeout(function () { //Start the timer
+        router.push('/admin/management-auto-landingpage')
+      }.bind(this), 2000)
 
     } else {
       openNotificationFail(registerData.data.message)
@@ -225,7 +228,7 @@ export default function Home(props) {
         path: '/admin/dashborad',
         breadcrumbName: 'หน้าหลัก',
       }, {
-        path: '/admin/management-organization',
+        path: '/admin/management-auto-landingpage',
         breadcrumbName: 'จัดการวันหยุดพิเศษ',
       }, {
         path: '',

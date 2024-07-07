@@ -24,7 +24,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/admin/management-auto-landingpage/add-landingpage": [
+    "/admin/management-auto-landingpage/landing-page/[introId]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
