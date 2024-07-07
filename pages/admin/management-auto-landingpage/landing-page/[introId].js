@@ -226,10 +226,10 @@ export default function Home(props) {
         breadcrumbName: 'หน้าหลัก',
       }, {
         path: '/admin/management-organization',
-        breadcrumbName: 'จัดการหน้า landing page',
+        breadcrumbName: 'จัดการวันหยุดพิเศษ',
       }, {
         path: '',
-        breadcrumbName: 'แก้ไข landing page',
+        breadcrumbName: 'แก้ไขวันหยุดพิเศษ',
       }]}>
       <div>
         {contextHolder}
@@ -249,13 +249,13 @@ export default function Home(props) {
 
             <Form.Item
               name="intro_title"
-              label="ชื่อหน้า landing page"
+              label="ชื่อวันหยุดพิเศษ"
               className="block text-gray-700 text-sm font-bold mb-2 w-1/3 form-organization"
               style={{ textAlign: "left !important" }}
               rules={[
                 {
                   required: true,
-                  message: 'กรุณากรอก ชื่อหน้า landing page!'
+                  message: 'กรุณากรอก ชื่อวันหยุดพิเศษ!'
                 },
               ]}
             >
@@ -263,7 +263,7 @@ export default function Home(props) {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="#"
                 type="text"
-                placeholder="ชื่อหน้า landing page"
+                placeholder="ชื่อวันหยุดพิเศษ"
               />
             </Form.Item>
             <Form.Item
@@ -362,7 +362,7 @@ export default function Home(props) {
             >
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                size="large" placeholder="ชื่อ คำที่แสดงบนปุ่ม"
+                size="large" placeholder="คำที่แสดงบนปุ่ม"
               />
             </Form.Item>
 
@@ -373,7 +373,7 @@ export default function Home(props) {
               style={{ textAlign: "left !important" }}
 
             >
-              <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" size="large" placeholder="Email"
+              <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" size="large" placeholder="url ที่ต้องการให้ลิงค์ไป"
               // onChange={() => setEmailText(event.target.value)}
               />
             </Form.Item>

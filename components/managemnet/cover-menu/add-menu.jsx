@@ -6,7 +6,7 @@ import {
   notification,
   Select,
   Typography,
-  Upload
+  Upload, Switch
 } from 'antd';
 import axios from 'axios';
 import dynamic from 'next/dynamic';
@@ -26,12 +26,14 @@ export default function modal({ fetch, user, pollId }) {
   const [previewImage, setPreviewImage] = useState(null)
   const [imageLandingPage, setImageLandingPage] = useState(null)
   const [previewVisible, setPreviewVisible] = useState(false)
+  const [active, setActive] = useState(0)
 
   const onSubmitHandler = async value => {
     const data = {
       organization_id: user.organization_id,
       header_image: imageLandingPage,
       header_link: value.header_link,
+      is_show: active,
     };
     const registerData = await apiInstance().post('/covermenu', data);
     if (registerData.data.status == 200) {
@@ -182,12 +184,12 @@ export default function modal({ fetch, user, pollId }) {
           form={form}
         ><Form.Item
           name="##"
-          label="ภาพลิงค์หน่วยงานที่เกี่ยวข้อง :"
+          label="ภาพส่วนหัวเว็บไซต์ : "
           className="block text-gray-700 text-sm font-bold mb-2 w-full"
           rules={[
             {
               required: true,
-              message: 'กรุณากรอกเลือกภาพลิงค์หน่วยงานที่เกี่ยวข้อง',
+              message: 'กรุณากรอกเลือกภาพส่วนหัวเว็บไซต์',
             },
           ]}
         >
@@ -239,6 +241,15 @@ export default function modal({ fetch, user, pollId }) {
           <Form.Item
             className=" text-gray-700 text-sm font-bold mb-2 w-full"
           >
+            <div className="lg:inline-flex text-left w-1/2">
+              <Switch
+                className="swt-btn"
+                checked={active}
+                onClick={value => setActive(value ? 1 : 0)}
+              />
+              <p className="mx-2 text-sm">การแสดงผล</p>
+
+            </div>
             <div className="lg:inline-flex w-full mt-6">
               <div className="text-center lg:text-right w-full lg:w-full">
                 <Button

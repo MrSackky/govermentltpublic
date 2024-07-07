@@ -192,7 +192,7 @@ export default function Home(props) {
 					breadcrumbName: 'หน้าหลัก',
 				}, {
 					path: '/admin/setting/general',
-					breadcrumbName: 'จัดการหน้าวันหยุดพิเศษ',
+					breadcrumbName: 'จัดการวันหยุดพิเศษ',
 				}]}
 		>
 			<div>

@@ -1,6 +1,7 @@
+import moment from 'moment';
 import nextConnect from 'next-connect';
 import middleware from '../../../middleware/auth';
-
+import { getIPAddress } from '../../../middleware/utils';
 const models = require('../../../db/models/index');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -55,12 +56,20 @@ const handler = nextConnect()
       organization_id,
       header_image,
       header_link,
+      is_show,
     } = body;
     //SampleText.replace("Developer", "App Builder");
+    var ip = await getIPAddress()
+    var currentDate = moment().format()
     const dataMenu = {
       organization_id: organization_id,
       header_image: header_image,
       header_link: header_link,
+      is_show: is_show,
+
+      is_deleted: 0,
+      ip: ip,
+      // date_created: currentDate.replace("+07:00", "+00:00"),
     };
 
     if (

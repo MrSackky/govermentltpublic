@@ -234,7 +234,7 @@ export default function modal({
           fields={fields}
         ><Form.Item
           name="##"
-          label="ภาพลิงค์หน่วยงานที่เกี่ยวข้อง :"
+          label="ภาพส่วนหัวเว็บไซต์ : "
           className="block text-gray-700 text-sm font-bold mb-2 w-full"
         // rules={[
         //   {

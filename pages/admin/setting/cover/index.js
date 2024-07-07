@@ -1,5 +1,4 @@
-import { DragOutlined } from '@ant-design/icons';
-import { Button, Image, Input, List, Modal, notification, Spin, Typography } from 'antd';
+import { Button, Image, Input, List, Modal, notification, Spin, Tag, Typography } from 'antd';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 // import UserNav from '../components/navigation/User';
@@ -243,29 +242,41 @@ export default function Home(props) {
               <List
                 header={
                   <>
+
                     <Typography.Text strong className="grabbable ">
-                      <DragOutlined className="icon" />
 
                       {/* {obj.header_image} */}
-                      <Image
-                        // width={200}
-                        preview={false}
-                        src={'..\\..\\..\\uploads\\c-' +
-                          user.organization_id +
-                          '\\cover\\' +
-                          obj.header_image}
+                      <div className='ml-4'>
+                        <Image
+                          //width={600}
+                          preview={false}
+                          src={'..\\..\\..\\uploads\\c-' +
+                            user.organization_id +
+                            '\\cover\\' +
+                            obj.header_image}
 
-                        style={{
-                          paddingRight: '5px'
-                        }}
-                      />
-                      {obj.header_link && <>
-                        <br /><span className="ml-8 ml-2 mb-4">[ <a href={obj.header_link} target='_blank'>{obj.header_link}</a> ]</span><br />
+                          style={{
+                            paddingRight: '5px',
+                            maxWidth: '50%', // ทำให้รูปภาพย่อหน้าต่างเว็บบราวเซอร์
+                            maxHeight: '50%', // ทำให้รูปภาพย่อ
+                          }}
+                        />
+                      </div>
+                      {obj.header_link && <><span className="ml-8 ml-2 mb-4">[ <a href={obj.header_link} target='_blank'>{obj.header_link}</a> ]</span>
                       </>
                       }
-                      <br />
+                    </Typography.Text>
+                    <div className='ml-4 mt-1'>
+                      <Tag
+                        color={obj.is_show == 1 ? 'success' : 'default'}
+                        style={{ marginLeft: '10px', marginRight: '0px' }}
+                      >
+                        {obj.is_show == 1 ? 'ใช้งาน' : 'ไม่ใช้งาน'}
+                      </Tag>
+                    </div>
+                    <div>
                       <Button
-                        className="ml-8 ml-2"
+                        className="ml-6 mt-2"
                         type="default"
                         onClick={() => {
                           onclikEditModal(true, obj);
@@ -281,7 +292,7 @@ export default function Home(props) {
                       >
                         ลบ
                       </Button>
-                    </Typography.Text>
+                    </div>
 
                   </>
                 }

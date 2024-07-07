@@ -199,7 +199,7 @@ export default function Home(props) {
           breadcrumbName: 'หน้าหลัก',
         }, {
           path: '/admin/management-auto-landingpage',
-          breadcrumbName: 'จัดการหน้าวันหยุดพิเศษ',
+          breadcrumbName: 'จัดการวันหยุดพิเศษ',
         }]}
     >
       <div>
