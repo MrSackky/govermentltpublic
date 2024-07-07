@@ -185,10 +185,10 @@ export default function Home(props) {
         path: '/admin/dashborad',
         breadcrumbName: 'หน้าหลัก',
       }, {
-        path: '/admin/management-organization',
+        path: '/admin/management-auto-landingpage',
         breadcrumbName: 'จัดการวันหยุดพิเศษ',
       }, {
-        path: '/admin/management-organization/add-organization',
+        path: '',
         breadcrumbName: 'เพิ่มวันหยุดพิเศษ',
       }]}>
       <div>

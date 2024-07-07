@@ -20,11 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/admin/management-auto-landingpage": [
+    "/admin/setting/general/[holidayId]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/admin/management-auto-landingpage/landing-page/[introId]": [
+    "/admin/setting/general/add-holiday": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

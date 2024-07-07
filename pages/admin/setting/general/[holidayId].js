@@ -266,7 +266,7 @@ export default function Home(props) {
           path: '/admin/dashborad',
           breadcrumbName: 'หน้าหลัก',
         }, {
-          path: '/admin/management-organization',
+          path: '/admin/setting/general/management-holiday',
           breadcrumbName: 'จัดการวันหยุดพิเศษ',
         }, {
           path: '',
