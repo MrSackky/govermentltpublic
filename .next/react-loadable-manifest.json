@@ -6,5 +6,19 @@
       "file": "static/chunks/0.js",
       "publicPath": "static/chunks/0.js"
     }
+  ],
+  "jodit-react": [
+    {
+      "id": "./node_modules/jodit-react/build/jodit-react.js",
+      "name": "./node_modules/jodit-react/build/jodit-react.js",
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/jodit/build/jodit.min.js",
+      "name": "./node_modules/jodit/build/jodit.min.js",
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    }
   ]
 }

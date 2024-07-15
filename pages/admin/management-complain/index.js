@@ -228,6 +228,25 @@ export default function Home(props) {
     >
       <div>
         {contextHolder}
+        <div className="w-full lg:inline-flex justify-between">
+          <div className="w-full lg:w-1/2 py-2 justify-center">
+            {/* <Link href="/admin/management/journal/add-journal">
+              <a
+                //onClick={(e) => handleLogout(e)}
+                className="lg:inline-flex lg:w-auto px-2 py-2 rounded h-8 text-white bg-green-600 font-bold items-center justify-center hover:bg-green-600 hover:text-white"
+              >
+                เพิ่มวารสาร
+              </a>
+            </Link> */}
+          </div>
+          <div className="text-right w-full justify-items-end lg:w-auto py-2">
+            <Search placeholder="กรอกหัวข้อร้องทุกข์"
+              onSearch={onSearch}
+              enterButton
+              allowClear
+            />
+          </div>
+        </div>
         <Table
           columns={columns}
           rowKey={record => record.complain_id}

@@ -1,7 +1,9 @@
 import {
   Button,
-  Input, Modal,
-  notification, Table, Typography
+  Input,
+  Modal,
+  notification,
+  Table, Typography
 } from 'antd';
 // import UserNav from '../components/navigation/User';
 import { useEffect, useState } from 'react';
@@ -202,33 +204,25 @@ export default function Home(props) {
         }]}>
       <div>
         {contextHolder}
-        {/* <Row >
-          <Col span={24} className=" pb-1">
-            <Row>
-              <Col span={18} className="">
-                <Row className="items-center">
-                  <Link href="/admin/management/activities/add-activities">
-                    <a
-                      //onClick={(e) => handleLogout(e)}
-                      className="lg:inline-flex lg:w-auto w-full px-2 py-2 rounded h-8 text-white bg-green-600 font-bold items-center justify-center hover:bg-green-600 hover:text-white"
-                    >
-                      เพิ่มข่าวกิจกรรม
-                    </a>
-                  </Link>
-                </Row>
-              </Col>
-              <Col span={6} className="flex items-center justify-end justify-items-end">
-                <Row className=" justify-end justify-items-end ">
-                  <Search placeholder="input search text"
-                    onSearch={onSearch}
-                    enterButton
-                    allowClear
-                  />
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row> */}
+        <div className="w-full lg:inline-flex justify-between">
+          <div className="w-full lg:w-1/2 py-2 justify-center">
+            {/* <Link href="/admin/management/activities/add-activities">
+              <a
+                //onClick={(e) => handleLogout(e)}
+                className="lg:inline-flex lg:w-auto px-2 py-2 rounded h-8 text-white bg-green-600 font-bold items-center justify-center hover:bg-green-600 hover:text-white"
+              >
+                เพิ่มข่าวกิจกรรม
+              </a>
+            </Link> */}
+          </div>
+          <div className="text-right w-full justify-items-end lg:w-auto py-2">
+            <Search placeholder="กรอกขื่อกิจกรรมถวายพระพร"
+              onSearch={onSearch}
+              enterButton
+              allowClear
+            />
+          </div>
+        </div>
 
         <Table
           columns={columns}

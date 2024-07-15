@@ -1,6 +1,8 @@
 import {
-  Button, Col, Input, Modal,
-  notification, Row, Table, Typography
+  Button,
+  Input, Modal,
+  notification,
+  Table, Typography
 } from 'antd';
 import Link from 'next/link';
 import Router from 'next/router';
@@ -178,7 +180,7 @@ export default function Home(props) {
         {contextHolder}
         <div className="w-full lg:inline-flex justify-between">
           <div className="w-full lg:w-1/2 py-2 justify-center">
-                  <Link href="/admin/management/webboard/add-webboard-q">
+            <Link href="/admin/management/webboard/add-webboard-q">
               <a
                 //onClick={(e) => handleLogout(e)}
                 className="lg:inline-flex lg:w-auto px-2 py-2 rounded h-8 text-white bg-green-600 font-bold items-center justify-center hover:bg-green-600 hover:text-white"
@@ -188,7 +190,7 @@ export default function Home(props) {
             </Link>
           </div>
           <div className="text-right w-full justify-items-end lg:w-auto py-2">
-            <Search placeholder="input search text"
+            <Search placeholder="กรอกชื่อหัวข้อกระดานข่าว"
               onSearch={onSearch}
               enterButton
               allowClear

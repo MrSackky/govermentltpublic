@@ -45,7 +45,7 @@ export default function Home(props) {
       // defaultSortOrder: 'descend',
     },
     {
-      title: 'ชื่อข่าววารสาร',
+      title: 'ชื่อวารสาร',
       dataIndex: 'journal_subject',
       sorter: true,
       // render: name => `${name.first} ${name.last}`,
@@ -188,7 +188,7 @@ export default function Home(props) {
             </Link>
           </div>
           <div className="text-right w-full justify-items-end lg:w-auto py-2">
-            <Search placeholder="input search text"
+            <Search placeholder="กรอกชื่อวารสาร"
               onSearch={onSearch}
               enterButton
               allowClear
